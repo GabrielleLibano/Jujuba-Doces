@@ -397,7 +397,7 @@ footer {
       <h3>Brigadeiros</h3>
       <div class="produtos-grid">
         <div class="card-produto">
-          <img src="imagens/breve.png" alt="Brigadeiro Tradicional">
+          <img src="imagens/b.png" alt="Brigadeiro Tradicional">
           <h4>Brigadeiro Tradicional</h4>
           <p>R$2,00</p>
           <div class="quantidade">
@@ -880,29 +880,7 @@ function atualizarCarrinho() {
   </footer>
 
 <script>
-  let carrinho = [];
   let historicoCompras = JSON.parse(localStorage.getItem('historicoCompras') || '{}');
-
-  function addItem(nome, preco) {
-    carrinho.push({ nome, preco });
-    atualizarPedido();
-  }
-
-  function removerItem(index) {
-    carrinho.splice(index, 1);
-    atualizarPedido();
-  }
-
-  function atualizarPedido() {
-    let itensHtml = "";
-    let total = 0;
-    carrinho.forEach((item, index) => {
-      itensHtml += `- ${item.nome} R$${item.preco.toFixed(2)} <button class="remover-btn" onclick="removerItem(${index})">Remover</button><br>`;
-      total += item.preco;
-    });
-    document.getElementById("itens").innerHTML = itensHtml;
-    document.getElementById("total").innerText = total.toFixed(2);
-  }
 
   function enviarPedido() {
   const telefone = document.getElementById("telefone")?.value || prompt("Digite seu número de telefone:");
@@ -920,58 +898,42 @@ function atualizarCarrinho() {
     return;
   }
 
-  // Atualiza histórico de compras
+  // Soma total corretamente
+  let total = 0;
+  carrinho.forEach(item => {
+    const preco = precos[item.nome] || 0;
+    total += item.qtd * preco;
+  });
+
+  // Verifica valor mínimo para entrega
+  if (entrega === "sim" && total < 15) {
+    alert("O pedido mínimo para entrega é de R$15,00.");
+    return;
+  }
+
+  // Histórico de compras
   historicoCompras[telefone] = (historicoCompras[telefone] || 0) + 1;
   localStorage.setItem('historicoCompras', JSON.stringify(historicoCompras));
 
-  // Monta mensagem do cliente
+  // Monta mensagem
   let mensagem = `*Olá, gostaria de encomendar:*%0A`;
   carrinho.forEach(item => {
-    mensagem += `- ${item.nome} R$${item.preco.toFixed(2)}%0A`;
+    const preco = precos[item.nome] || 0;
+    mensagem += `- ${item.qtd}x ${item.nome} (R$${(item.qtd * preco).toFixed(2)})%0A`;
   });
 
-  mensagem += `%0ATotal: R$${parseFloat(document.getElementById("total").innerText).toFixed(2)}`;
+  mensagem += `%0ATotal: R$${total.toFixed(2)}`;
   mensagem += `%0ATelefone: ${telefone}`;
   mensagem += `%0AEntrega: ${entrega === "sim" ? "Sim" : "Não"}`;
-
-  if (entrega === "sim") {
-    mensagem += `%0AEndereço: ${endereco}`;
-  }
-
+  if (entrega === "sim") mensagem += `%0AEndereço: ${endereco}`;
   mensagem += `%0APagamento: ${formaPagamento}`;
 
-  /* 🎉 Adiciona mensagem de brinde se for a 10ª compra
-  if (historicoCompras[telefone] === 10) {
-    mensagem += `%0A🎉 Você fez a 10ª compra! Parabéns, você tem direito a um brinde da Jujuba Doces! 🎁`;
-  } */
-
-  // Envia para WhatsApp
-  const numeroWhatsApp = "5551998804748"; // <- número da loja
+  // WhatsApp
+  const numeroWhatsApp = "5551998804748";
   const urlCliente = `https://wa.me/${numeroWhatsApp}?text=${mensagem}`;
   window.open(urlCliente, '_blank');
 }
 
-  function alterarQuantidade(nome, delta) {
-  const span = document.getElementById(`qtd-${nome}`);
-  let qtdAtual = parseInt(span.innerText);
-  qtdAtual = Math.max(0, qtdAtual + delta);
-  span.innerText = qtdAtual;
-
-  // Atualiza carrinho
-  const index = carrinho.findIndex(item => item.nome === nome);
-  if (index !== -1) {
-    if (qtdAtual === 0) {
-      carrinho.splice(index, 1);
-    } else {
-      carrinho[index].qtd = qtdAtual;
-    }
-  } else if (qtdAtual > 0) {
-    const preco = getPrecoPorNome(nome); // crie essa função para buscar o preço
-    carrinho.push({ nome, preco, qtd: qtdAtual });
-  }
-
-  atualizarPedido();
-}
 
 </script>
 </body>
