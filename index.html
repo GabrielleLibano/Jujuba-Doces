@@ -214,9 +214,167 @@ footer {
   }
 }
 
+  .produtos-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.card-produto {
+  background: white;
+  border-radius: 12px;
+  padding: 1rem;
+  width: 160px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+  text-align: center;
+}
+
+.card-produto img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 0.5rem;
+}
+
+.card-produto h4 {
+  font-size: 1rem;
+  margin: 0.5rem 0 0.25rem;
+  color: #a3003d;
+}
+
+.card-produto p {
+  margin: 0.25rem 0;
+  font-weight: bold;
+  color: #444;
+}
+
+.quantidade {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.quantidade button {
+  background-color: #a3003d;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  width: 28px;
+  height: 28px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+   .container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 2rem;
+    padding: 1rem;
+    flex-wrap: wrap;
+    }
+
+
+  .cardapio {
+    flex: 2;
+    min-width: 60%;
+  }
+
+  .pedido {
+    flex: 1;
+    background: white;
+    border-radius: 12px;
+    padding: 1rem;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.06);
+    min-width: 300px;
+  }
+
+  .categoria {
+    margin-bottom: 2rem;
+  }
+
+  .categoria h3 {
+    border-bottom: 2px solid #a3003d;
+    padding-bottom: 0.25rem;
+    color: #a3003d;
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+  }
+
+  .produtos-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .card-produto {
+    background: white;
+    border-radius: 12px;
+    padding: 1rem;
+    width: 160px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    text-align: center;
+  }
+
+  .card-produto img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 0.5rem;
+  }
+
+  .card-produto h4 {
+    font-size: 1rem;
+    margin: 0.5rem 0 0.25rem;
+    color: #a3003d;
+  }
+
+  .card-produto p {
+    margin: 0.25rem 0;
+    font-weight: bold;
+    color: #444;
+  }
+
+  .quantidade {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+  }
+
+  .quantidade button {
+    background-color: #a3003d;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    width: 28px;
+    height: 28px;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+
+  @media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .pedido {
+    border-left: none;
+  }
+}
+
+
+
+
 </style>
 </head>
 <body>
+<main>
   <header>
     <h1>Jujuba doces</h1>
     <p>Quer um docinho para acalmar a ansiedade?</p>
@@ -234,79 +392,489 @@ footer {
   <div class="container">
     <!-- Lista de itens -->
     <div class="cardapio">
-      <div class="categoria">
-        <h3>Brigadeiros</h3>
-        <div class="item"><div class="info"><img src="imagens/brigadeiro_tradicional.png">Brigadeiro Tradicional - R$2,00 Unidade</div><button onclick="addItem('Tradicional', 2.0)">+</button></div>
-        <div class="item"><div class="info"><img src="imagens/">Beijinho - R$2,00 Unidade</div><button onclick="addItem('Beijinho', 2.0)">+</button></div>
-        <div class="item"><div class="info"><img src="imagens/prestigio.png">Prestigio - R$2,00 Unidade</div><button onclick="addItem('Prestigio', 2.0)">+</button></div>
-        <div class="item"><div class="info"><img src="imagens/">Ninho com Nutella - R$2,50 Unidade</div><button onclick="addItem('Ninho com nutella', 2.5)">+</button></div>
-        <div class="item"><div class="info"><img src="imagens/">Crocante - R$2,00 Unidade</div><button onclick="addItem('Crocante', 2.0)">+</button></div>
-        <div class="item"><div class="info"><img src="imagens/ninho.png">Ninho - R$2,00 Unidade</div><button onclick="addItem('Ninho', 2.0)">+</button></div>
-        <div class="item"><div class="info"><img src="imagens/">Oreo - R$2,00 Unidade</div><button onclick="addItem('Oreo', 2.0)">+</button></div>
-        <div class="item"><div class="info"><img src="imagens/">Corote - R$2,00 Unidade</div><button onclick="addItem('Corote', 2.0)">+</button></div>
-        <div class="item"><div class="info"><img src="imagens/vinho.png">Vinho - R$2,00 Unidade</div><button onclick="addItem('Vinho', 2.0)">+</button></div>
-        <div class="item"><div class="info"><img src="imagens/">Amarula - R$2,00 Unidade</div><button onclick="addItem('Amarula', 2.0)">+</button></div>
-        <div class="item"><div class="info"><img src="imagens/coxinha.png">Coxinha de morango - R$3,00 Unidade</div><button onclick="addItem('Coxinha de morango', 3.0)">+</button></div>
+         <!-- Brigadeiros -->
+    <div class="categoria">
+      <h3>Brigadeiros</h3>
+      <div class="produtos-grid">
+        <div class="card-produto">
+          <img src="imagens/brigadeiro_tradicional.png" alt="Brigadeiro Tradicional">
+          <h4>Brigadeiro Tradicional</h4>
+          <p>R$2,00</p>
+          <div class="quantidade">
+            <button onclick="alterarQuantidade('Tradicional', -1)">-</button>
+            <span id="qtd-Tradicional">0</span>
+            <button onclick="alterarQuantidade('Tradicional', 1)">+</button>
+          </div>
+        </div>
+        <div class="card-produto">
+          <img src="imagens/" alt="Beijinho">
+          <h4>Beijinho</h4>
+          <p>R$2,00</p>
+          <div class="quantidade">
+            <button onclick="alterarQuantidade('Beijinho', -1)">-</button>
+            <span id="qtd-Beijinho">0</span>
+            <button onclick="alterarQuantidade('Beijinho', 1)">+</button>
+          </div>
+        </div>
+        <div class="card-produto">
+          <img src="imagens/prestigio.png" alt="Prestigio">
+          <h4>Prestigio</h4>
+          <p>R$2,00</p>
+          <div class="quantidade">
+            <button onclick="alterarQuantidade('Prestigio', -1)">-</button>
+            <span id="qtd-Prestigio">0</span>
+            <button onclick="alterarQuantidade('Prestigio', 1)">+</button>
+          </div>
+        </div>
+        <div class="card-produto">
+          <img src="imagens/" alt="Ninho com Nutella">
+          <h4>Ninho com Nutella</h4>
+          <p>R$2,50</p>
+          <div class="quantidade">
+            <button onclick="alterarQuantidade('Ninho com nutella', -1)">-</button>
+            <span id="qtd-Ninho com nutella">0</span>
+            <button onclick="alterarQuantidade('Ninho com nutella', 1)">+</button>
+          </div>
+        </div>
+        <div class="card-produto">
+          <img src="imagens/" alt="Crocante">
+          <h4>Crocante</h4>
+          <p>R$2,00</p>
+          <div class="quantidade">
+            <button onclick="alterarQuantidade('Crocante', -1)">-</button>
+            <span id="qtd-Crocante">0</span>
+            <button onclick="alterarQuantidade('Crocante', 1)">+</button>
+          </div>
+        </div>
+        <div class="card-produto">
+          <img src="imagens/ninho.png" alt="Ninho">
+          <h4>Ninho</h4>
+          <p>R$2,00</p>
+          <div class="quantidade">
+            <button onclick="alterarQuantidade('Ninho', -1)">-</button>
+            <span id="qtd-Ninho">0</span>
+            <button onclick="alterarQuantidade('Ninho', 1)">+</button>
+          </div>
+        </div>
+        <div class="card-produto">
+          <img src="imagens/" alt="Oreo">
+          <h4>Oreo</h4>
+          <p>R$2,00</p>
+          <div class="quantidade">
+            <button onclick="alterarQuantidade('Oreo', -1)">-</button>
+            <span id="qtd-Oreo">0</span>
+            <button onclick="alterarQuantidade('Oreo', 1)">+</button>
+          </div>
+        </div>
+        <div class="card-produto">
+          <img src="imagens/" alt="Corote">
+          <h4>Corote</h4>
+          <p>R$2,00</p>
+          <div class="quantidade">
+            <button onclick="alterarQuantidade('Corote', -1)">-</button>
+            <span id="qtd-Corote">0</span>
+            <button onclick="alterarQuantidade('Corote', 1)">+</button>
+          </div>
+        </div>
+        <div class="card-produto">
+          <img src="imagens/vinho.png" alt="Vinho">
+          <h4>Vinho</h4>
+          <p>R$2,00</p>
+          <div class="quantidade">
+            <button onclick="alterarQuantidade('Vinho', -1)">-</button>
+            <span id="qtd-Vinho">0</span>
+            <button onclick="alterarQuantidade('Vinho', 1)">+</button>
+          </div>
+        </div>
+        <div class="card-produto">
+          <img src="imagens/" alt="Amarula">
+          <h4>Amarula</h4>
+          <p>R$2,00</p>
+          <div class="quantidade">
+            <button onclick="alterarQuantidade('Amarula', -1)">-</button>
+            <span id="qtd-Amarula">0</span>
+            <button onclick="alterarQuantidade('Amarula', 1)">+</button>
+          </div>
+        </div>
+        <div class="card-produto">
+          <img src="imagens/coxinha.png" alt="Coxinha de morango">
+          <h4>Coxinha de morango</h4>
+          <p>R$3,00</p>
+          <div class="quantidade">
+            <button onclick="alterarQuantidade('Coxinha de morango', -1)">-</button>
+            <span id="qtd-Coxinha de morango">0</span>
+            <button onclick="alterarQuantidade('Coxinha de morango', 1)">+</button>
+          </div>
+        </div>
       </div>
-      <div class="categoria">
-        <h3>Bandejas de Brigadeiros</h3>
-        <div class="item"><div class="info"><img src="imagens/08brigadeiros.png">Brigadeiro Tradicional 08 Unidades - R$16,00</div><button onclick="addItem('Tradicional', 16.0)">+</button></div>
-        <div class="item"><div class="info"><img src="imagens/12brigadeiros.png">Brigadeiro Tradicional 12 Unidades - R$24,00</div><button onclick="addItem('Tradicional', 24.0)">+</button></div>
-        <div class="item"><div class="info"><img src="imagens/">Beijinho 08 Unidades - R$16,00</div><button onclick="addItem('Beijinho', 16.0)">+</button></div>
-        <div class="item"><div class="info"><img src="imagens/">Beijinho 12 Unidades - R$24,00</div><button onclick="addItem('Beijinho', 24.0)">+</button></div>
-        <div class="item"><div class="info"><img src="imagens/">Prestigio 08 unidades - R$16,00</div><button onclick="addItem('Pestigio', 16.0)">+</button></div>
-        <div class="item"><div class="info"><img src="imagens/">Prestigio 12 unidades - R$24,00</div><button onclick="addItem('Pestigio', 24.0)">+</button></div>
-        <div class="item"><div class="info"><img src="imagens/">Ninho  com Nutella 08 unidades - R$17,50</div><button onclick="addItem('Ninho com nutella', 17.5)">+</button></div>
-        <div class="item"><div class="info"><img src="imagens/">Ninho com Nutella - R$25,00</div><button onclick="addItem('Ninho com nutella', 25.0)">+</button></div>
-        <div class="item"><div class="info"><img src="imagens/">Crocante 08 unidades  - R$16,00</div><button onclick="addItem('Crocante', 16.0)">+</button></div>
-        <div class="item"><div class="info"><img src="imagens/">Crocante 16 unidades - R$24,00</div><button onclick="addItem('Crocante', 24.0)">+</button></div>
-        <div class="item"><div class="info"><img src="imagens/">Ninho 08 unidades - R$16,00</div><button onclick="addItem('Ninho', 16.0)">+</button></div>
-        <div class="item"><div class="info"><img src="imagens/ninho12.png">Ninho 12 unidades - R$24,00</div><button onclick="addItem('Ninho', 24.0)">+</button></div>
-        <div class="item"><div class="info"><img src="imagens/">Oreo 08 unidades - R$16,00</div><button onclick="addItem('Oreo', 16.0)">+</button></div>
-        <div class="item"><div class="info"><img src="imagens/">Oreo 12 unidades - R$24,00</div><button onclick="addItem('Oreo', 24.0)">+</button></div>
-        <div class="item"><div class="info"><img src="imagens/">Corote 08 unidades - R$16,00</div><button onclick="addItem('corote', 16.0)">+</button></div>
-        <div class="item"><div class="info"><img src="imagens/">Corote 12 unidades - R$24,00</div><button onclick="addItem('corote', 24.0)">+</button></div>
-        <div class="item"><div class="info"><img src="imagens/">Vinho 08 unidades - R$16,00</div><button onclick="addItem('Vinho', 16.0)">+</button></div>
-        <div class="item"><div class="info"><img src="imagens/">Vinho 12 unidades - R$24,00</div><button onclick="addItem('Vinho', 24.0)">+</button></div>
-        <div class="item"><div class="info"><img src="imagens/">Amarula 08 unidades - R$16,00</div><button onclick="addItem('Amarula', 16.0)">+</button></div>
-        <div class="item"><div class="info"><img src="imagens/">Amarula 12 unidades - R$24,00</div><button onclick="addItem('Amarula', 24.0)">+</button></div>
-        <div class="item"><div class="info"><img src="imagens/coxinha12.png">Coxinha de morango 08 unidades - R$24,00</div><button onclick="addItem('Coxinha de morango', 24.0)">+</button></div>
-        <div class="item"><div class="info"><img src="imagens/coxinha12.png">Coxinha de morango 16 unidades - R$32,00</div><button onclick="addItem('Coxinha de morango', 32.0)">+</button></div>
+    </div>
+<!-- Bandejas de Brigadeiros -->
+    <div class="categoria">
+      <h3>Bandejas de Brigadeiros</h3>
+      <div class="produtos-grid">
+        <div class="card-produto">
+          <img src="imagens/08brigadeiros.png" alt="Brigadeiro Tradicional 08 Unidades">
+          <h4>Brigadeiro Tradicional 08 Unidades</h4>
+          <p>R$16,00</p>
+          <div class="quantidade">
+            <button onclick="alterarQuantidade('Tradicional 08', -1)">-</button>
+            <span id="qtd-Tradicional 08">0</span>
+            <button onclick="alterarQuantidade('Tradicional 08', 1)">+</button>
+          </div>
+        </div>
+        <div class="card-produto">
+          <img src="imagens/12brigadeiros.png" alt="Brigadeiro Tradicional 12 Unidades">
+          <h4>Brigadeiro Tradicional 12 Unidades</h4>
+          <p>R$24,00</p>
+          <div class="quantidade">
+            <button onclick="alterarQuantidade('Tradicional 12', -1)">-</button>
+            <span id="qtd-Tradicional 12">0</span>
+            <button onclick="alterarQuantidade('Tradicional 12', 1)">+</button>
+          </div>
+        </div>
+        <div class="card-produto">
+          <img src="imagens/breve.png" alt="Beijinho 08 Unidades">
+          <h4>Beijinho 08 Unidades</h4>
+          <p>R$16,00</p>
+          <div class="quantidade">
+            <button onclick="alterarQuantidade('Beijinho 08', -1)">-</button>
+            <span id="qtd-Beijinho 08">0</span>
+            <button onclick="alterarQuantidade('Beijinho 08', 1)">+</button>
+          </div>
+        </div>
+        <div class="card-produto">
+          <img src="imagens/breve.png" alt="Beijinho 12 Unidades">
+          <h4>Beijinho 12 Unidades</h4>
+          <p>R$24,00</p>
+          <div class="quantidade">
+            <button onclick="alterarQuantidade('Beijinho 12', -1)">-</button>
+            <span id="qtd-Beijinho 12">0</span>
+            <button onclick="alterarQuantidade('Beijinho 12', 1)">+</button>
+          </div>
+        </div>
+        <div class="card-produto">
+          <img src="imagens/breve.png" alt="Prestigio 08 Unidades">
+          <h4>Prestigio 08 Unidades</h4>
+          <p>R$16,00</p>
+          <div class="quantidade">
+            <button onclick="alterarQuantidade('Prestigio 08', -1)">-</button>
+            <span id="qtd-Prestigio 08">0</span>
+            <button onclick="alterarQuantidade('Prestigio 08', 1)">+</button>
+          </div>
+        </div>
+        <div class="card-produto">
+          <img src="imagens/breve.png" alt="Prestigio 12 Unidades">
+          <h4>Prestigio 12 Unidades</h4>
+          <p>R$24,00</p>
+          <div class="quantidade">
+            <button onclick="alterarQuantidade('Prestigio 12', -1)">-</button>
+            <span id="qtd-Prestigio 12">0</span>
+            <button onclick="alterarQuantidade('Prestigio 12', 1)">+</button>
+          </div>
+        </div>
+        <div class="card-produto">
+          <img src="imagens/breve.png" alt="Ninho com Nutella 08 Unidades">
+          <h4>Ninho com Nutella 08 Unidades</h4>
+          <p>R$17,50</p>
+          <div class="quantidade">
+            <button onclick="alterarQuantidade('Ninho Nutella 08', -1)">-</button>
+            <span id="qtd-Ninho Nutella 08">0</span>
+            <button onclick="alterarQuantidade('Ninho Nutella 08', 1)">+</button>
+          </div>
+        </div>
+        <div class="card-produto">
+          <img src="imagens/breve.png" alt="Ninho com Nutella 12 Unidades">
+          <h4>Ninho com Nutella 12 Unidades</h4>
+          <p>R$25,00</p>
+          <div class="quantidade">
+            <button onclick="alterarQuantidade('Ninho Nutella 12', -1)">-</button>
+            <span id="qtd-Ninho Nutella 12">0</span>
+            <button onclick="alterarQuantidade('Ninho Nutella 12', 1)">+</button>
+          </div>
+        </div>
+        <div class="card-produto">
+          <img src="imagens/breve.png" alt="Crocante 08 Unidades">
+          <h4>Crocante 08 Unidades</h4>
+          <p>R$16,00</p>
+          <div class="quantidade">
+            <button onclick="alterarQuantidade('Crocante 08', -1)">-</button>
+            <span id="qtd-Crocante 08">0</span>
+            <button onclick="alterarQuantidade('Crocante 08', 1)">+</button>
+          </div>
+        </div>
+        <div class="card-produto">
+          <img src="imagens/breve.png" alt="Crocante 12 Unidades">
+          <h4>Crocante 12 Unidades</h4>
+          <p>R$24,00</p>
+          <div class="quantidade">
+            <button onclick="alterarQuantidade('Crocante 12', -1)">-</button>
+            <span id="qtd-Crocante 12">0</span>
+            <button onclick="alterarQuantidade('Crocante 12', 1)">+</button>
+          </div>
+        </div>
+        <div class="card-produto">
+          <img src="imagens/breve.png" alt="Ninho 08 Unidades">
+          <h4>Ninho 08 Unidades</h4>
+          <p>R$16,00</p>
+          <div class="quantidade">
+            <button onclick="alterarQuantidade('Ninho 08', -1)">-</button>
+            <span id="qtd-Ninho 08">0</span>
+            <button onclick="alterarQuantidade('Ninho 08', 1)">+</button>
+          </div>
+        </div>
+        <div class="card-produto">
+          <img src="imagens/breve.png" alt="Ninho 12 Unidades">
+          <h4>Ninho 12 Unidades</h4>
+          <p>R$24,00</p>
+          <div class="quantidade">
+            <button onclick="alterarQuantidade('Ninho 12', -1)">-</button>
+            <span id="qtd-Ninho 12">0</span>
+            <button onclick="alterarQuantidade('Ninho 12', 1)">+</button>
+          </div>
+        </div>
+        <div class="card-produto">
+          <img src="imagens/breve.png" alt="Oreo 08 Unidades">
+          <h4>Oreo 08 Unidades</h4>
+          <p>R$16,00</p>
+          <div class="quantidade">
+            <button onclick="alterarQuantidade('Oreo 08', -1)">-</button>
+            <span id="qtd-Oreo 08">0</span>
+            <button onclick="alterarQuantidade('Oreo 08', 1)">+</button>
+          </div>
+        </div>
+        <div class="card-produto">
+          <img src="imagens/breve.png" alt="Oreo 12 Unidades">
+          <h4>Oreo 12 Unidades</h4>
+          <p>R$24,00</p>
+          <div class="quantidade">
+            <button onclick="alterarQuantidade('Oreo 12', -1)">-</button>
+            <span id="qtd-Oreo 12">0</span>
+            <button onclick="alterarQuantidade('Oreo 12', 1)">+</button>
+          </div>
+        </div>
+        <div class="card-produto">
+          <img src="imagens/breve.png" alt="Corote 08 Unidades">
+          <h4>Corote 08 Unidades</h4>
+          <p>R$16,00</p>
+          <div class="quantidade">
+            <button onclick="alterarQuantidade('Corote 08', -1)">-</button>
+            <span id="qtd-Corote 08">0</span>
+            <button onclick="alterarQuantidade('Corote 08', 1)">+</button>
+          </div>
+        </div>
+        <div class="card-produto">
+          <img src="imagens/breve.png" alt="Corote 12 Unidades">
+          <h4>Corote 12 Unidades</h4>
+          <p>R$24,00</p>
+          <div class="quantidade">
+            <button onclick="alterarQuantidade('Corote 12', -1)">-</button>
+            <span id="qtd-Corote 12">0</span>
+            <button onclick="alterarQuantidade('Corote 12', 1)">+</button>
+          </div>
+        </div>
+        <div class="card-produto">
+          <img src="imagens/breve.png" alt="Vinho 08 Unidades">
+          <h4>Vinho 08 Unidades</h4>
+          <p>R$16,00</p>
+          <div class="quantidade">
+            <button onclick="alterarQuantidade('Vinho 08', -1)">-</button>
+            <span id="qtd-Vinho 08">0</span>
+            <button onclick="alterarQuantidade('Vinho 08', 1)">+</button>
+          </div>
+        </div>
+        <div class="card-produto">
+          <img src="imagens/breve.png" alt="Vinho 12 Unidades">
+          <h4>Vinho 12 Unidades</h4>
+          <p>R$24,00</p>
+          <div class="quantidade">
+            <button onclick="alterarQuantidade('Vinho 12', -1)">-</button>
+            <span id="qtd-Vinho 12">0</span>
+            <button onclick="alterarQuantidade('Vinho 12', 1)">+</button>
+          </div>
+        </div>
+        <div class="card-produto">
+          <img src="imagens/breve.png" alt="Amarula 08 Unidades">
+          <h4>Amarula 08 Unidades</h4>
+          <p>R$16,00</p>
+          <div class="quantidade">
+            <button onclick="alterarQuantidade('Amarula 08', -1)">-</button>
+            <span id="qtd-Amarula 08">0</span>
+            <button onclick="alterarQuantidade('Amarula 08', 1)">+</button>
+          </div>
+        </div>
+        <div class="card-produto">
+          <img src="imagens/breve.png" alt="Amarula 12 Unidades">
+          <h4>Amarula 12 Unidades</h4>
+          <p>R$24,00</p>
+          <div class="quantidade">
+            <button onclick="alterarQuantidade('Amarula 12', -1)">-</button>
+            <span id="qtd-Amarula 12">0</span>
+            <button onclick="alterarQuantidade('Amarula 12', 1)">+</button>
+          </div>
+        </div>
+        <div class="card-produto">
+          <img src="imagens/breve.png" alt="Coxinha de morango 08 Unidades">
+          <h4>Coxinha de morango 08 Unidades</h4>
+          <p>R$24,00</p>
+          <div class="quantidade">
+            <button onclick="alterarQuantidade('Coxinha 08', -1)">-</button>
+            <span id="qtd-Coxinha 08">0</span>
+            <button onclick="alterarQuantidade('Coxinha 08', 1)">+</button>
+          </div>
+        </div>
+        <div class="card-produto">
+          <img src="imagens/breve.png" alt="Coxinha de morango 16 Unidades">
+          <h4>Coxinha de morango 16 Unidades</h4>
+          <p>R$32,00</p>
+          <div class="quantidade">
+            <button onclick="alterarQuantidade('Coxinha 16', -1)">-</button>
+            <span id="qtd-Coxinha 16">0</span>
+            <button onclick="alterarQuantidade('Coxinha 16', 1)">+</button>
+          </div>
+        </div>
       </div>
-      <div class="categoria">
-        <h3>Brownies</h3>
-        <div class="item"><div class="info"><img src="imagens/fatia.png">Fatia de brownie - R$4,00</div><button onclick="addItem('Fatia de Brownie', 4.0)">+</button></div>
-        <div class="item"><div class="info"><img src="imagens/">Fatia de brownie recheada - R$8,00</div><button onclick="addItem('Fatia de Brownie recheada', 8.0)">+</button></div>
-        <div class="item"><div class="info"><img src="imagens/brownie.png">Bandeja de brownie - R$18,00</div><button onclick="addItem('Bandeja de Brownie', 18.0)">+</button></div>
+    </div>
+          <!-- Brownies -->
+    <div class="categoria">
+      <h3>Brownies</h3>
+      <div class="produtos-grid">
+        <div class="card-produto">
+          <img src="imagens/fatia.png" alt="Fatia de brownie">
+          <h4>Fatia de brownie</h4>
+          <p>R$4,00</p>
+          <div class="quantidade">
+            <button onclick="alterarQuantidade('Fatia de Brownie', -1)">-</button>
+            <span id="qtd-Fatia de Brownie">0</span>
+            <button onclick="alterarQuantidade('Fatia de Brownie', 1)">+</button>
+          </div>
+        </div>
+        <div class="card-produto">
+          <img src="imagens/breve.png" alt="Fatia de brownie recheada">
+          <h4>Fatia de brownie recheada</h4>
+          <p>R$8,00</p>
+          <div class="quantidade">
+            <button onclick="alterarQuantidade('Fatia de Brownie recheada', -1)">-</button>
+            <span id="qtd-Fatia de Brownie recheada">0</span>
+            <button onclick="alterarQuantidade('Fatia de Brownie recheada', 1)">+</button>
+          </div>
+        </div>
+        <div class="card-produto">
+          <img src="imagens/brownie.png" alt="Bandeja de brownie">
+          <h4>Bandeja de brownie</h4>
+          <p>R$18,00</p>
+          <div class="quantidade">
+            <button onclick="alterarQuantidade('Bandeja de Brownie', -1)">-</button>
+            <span id="qtd-Bandeja de Brownie">0</span>
+            <button onclick="alterarQuantidade('Bandeja de Brownie', 1)">+</button>
+          </div>
+        </div>
       </div>
     </div>
 
     <div class="pedido">
-      <h3>Seu Pedido</h3>
-      <div id="itens"></div>
-      <p><strong>Total:</strong> R$<span id="total">0.00</span></p>
+    <h3>Seu Pedido</h3>
+    <div id="itens"></div>
+    <p><strong>Total:</strong> R$<span id="total">0.00</span></p>
 
-      <label for="telefone">Telefone *</label>
-      <input type="text" id="telefone" placeholder="(00) 00000-0000" required>
+    <label for="telefone">Telefone *</label>
+    <input type="text" id="telefone" placeholder="(00) 00000-0000" required>
 
-      <label for="entrega">Entrega?</label>
-      <select id="entrega" onchange="atualizarEnderecoObrigatorio()">
-        <option value="nao">Não</option>
-        <option value="sim">Sim</option>
-      </select>
+    <label for="entrega">Entrega?</label>
+    <select id="entrega" onchange="atualizarEnderecoObrigatorio()">
+      <option value="nao">Não</option>
+      <option value="sim">Sim</option>
+    </select>
 
-      <input type="text" id="endereco" placeholder="Endereço de entrega">
+    <input type="text" id="endereco" placeholder="Endereço de entrega">
 
-      <label for="pagamento">Forma de Pagamento</label>
-      <select id="pagamento">
-        <option value="dinheiro">Dinheiro</option>
-        <option value="pix">PIX</option>
-      </select>
+    <label for="pagamento">Forma de Pagamento</label>
+    <select id="pagamento">
+      <option value="dinheiro">Dinheiro</option>
+      <option value="pix">PIX</option>
+    </select>
 
-      <button onclick="enviarPedido()"> Enviar pedido pelo WhatsApp</button>
-    </div>
+    <button onclick="enviarPedido()">Enviar pedido pelo WhatsApp</button>
   </div>
+</div>
 
+<script>
+let carrinho = [];
+
+const precos = {
+  "Tradicional": 2.0,
+  "Beijinho": 2.0,
+  "Prestigio": 2.0,
+  "Ninho com nutella": 2.5,
+  "Crocante": 2.0,
+  "Ninho": 2.0,
+  "Oreo": 2.0,
+  "Corote": 2.0,
+  "Vinho": 2.0,
+  "Amarula": 2.0,
+  "Coxinha de morango": 3.0,
+  "Tradicional 08": 16.0,
+  "Tradicional 12": 24.0,
+  "Beijinho 08": 16.0,
+  "Beijinho 12": 24.0,
+  "Prestigio 08": 16.0,
+  "Prestigio 12": 24.0,
+  "Ninho Nutella 08": 17.5,
+  "Ninho Nutella 12": 25.0,
+  "Crocante 08": 16.0,
+  "Crocante 12": 24.0,
+  "Ninho 08": 16.0,
+  "Ninho 12": 24.0,
+  "Oreo 08": 16.0,
+  "Oreo 12": 24.0,
+  "Corote 08": 16.0,
+  "Corote 12": 24.0,
+  "Vinho 08": 16.0,
+  "Vinho 12": 24.0,
+  "Amarula 08": 16.0,
+  "Amarula 12": 24.0,
+  "Coxinha 08": 24.0,
+  "Coxinha 16": 32.0,
+  "Fatia de Brownie": 4.0,
+  "Fatia de Brownie recheada": 8.0,
+  "Bandeja de Brownie": 18.0
+};
+
+function alterarQuantidade(nome, delta) {
+  const qtdSpan = document.getElementById(`qtd-${nome}`);
+  let qtdAtual = parseInt(qtdSpan.innerText);
+  qtdAtual = Math.max(0, qtdAtual + delta);
+  qtdSpan.innerText = qtdAtual;
+
+  const index = carrinho.findIndex(item => item.nome === nome);
+  if (index !== -1) {
+    if (qtdAtual === 0) {
+      carrinho.splice(index, 1);
+    } else {
+      carrinho[index].qtd = qtdAtual;
+    }
+  } else if (qtdAtual > 0) {
+    carrinho.push({ nome, qtd: qtdAtual });
+  }
+
+  atualizarCarrinho();
+}
+
+function atualizarCarrinho() {
+  let itensHtml = "";
+  let total = 0;
+
+  carrinho.forEach(item => {
+    const preco = precos[item.nome] || 0;
+    total += item.qtd * preco;
+    itensHtml += `- ${item.qtd}x ${item.nome} (R$${(item.qtd * preco).toFixed(2)})<br>`;
+  });
+
+  document.getElementById("itens").innerHTML = itensHtml;
+  document.getElementById("total").innerText = total.toFixed(2);
+}
+</script>
+
+  </main>
   <footer>
     &copy; 2025 Jujuba Doces. Todos os direitos reservados.
   </footer>
@@ -381,6 +949,28 @@ footer {
   const numeroWhatsApp = "5551998804748"; // <- número da loja
   const urlCliente = `https://wa.me/${numeroWhatsApp}?text=${mensagem}`;
   window.open(urlCliente, '_blank');
+}
+
+  function alterarQuantidade(nome, delta) {
+  const span = document.getElementById(`qtd-${nome}`);
+  let qtdAtual = parseInt(span.innerText);
+  qtdAtual = Math.max(0, qtdAtual + delta);
+  span.innerText = qtdAtual;
+
+  // Atualiza carrinho
+  const index = carrinho.findIndex(item => item.nome === nome);
+  if (index !== -1) {
+    if (qtdAtual === 0) {
+      carrinho.splice(index, 1);
+    } else {
+      carrinho[index].qtd = qtdAtual;
+    }
+  } else if (qtdAtual > 0) {
+    const preco = getPrecoPorNome(nome); // crie essa função para buscar o preço
+    carrinho.push({ nome, preco, qtd: qtdAtual });
+  }
+
+  atualizarPedido();
 }
 
 </script>
