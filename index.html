@@ -374,7 +374,34 @@ footer {
   border-radius: 8px;
   margin-bottom: 0.5rem;
 }
+/* ✅ AJUSTE PARA FIXAR CARRINHO AO LADO */
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: 1rem;
+  flex-wrap: wrap;
+  flex: 1;
+}
 
+.cardapio {
+  flex: 3;
+  min-width: 0;
+}
+
+.pedido {
+  flex: 1;
+  max-width: 350px;
+  position: sticky;
+  top: 100px;
+  align-self: flex-start;
+  height: fit-content;
+  background: white;
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.06);
+}
 
 
 
